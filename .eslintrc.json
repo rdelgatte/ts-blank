@@ -18,7 +18,7 @@
   // As using Airbnb code styles, we need to override specific rules
   "rules": {
     // To use single quotes and raise a warning else.
-    "@typescript-eslint/quotes": ["warn", "single"],
+    "@typescript-eslint/quotes": ["warn", "double"],
     "jest/no-hooks": [
       "error",
       {
