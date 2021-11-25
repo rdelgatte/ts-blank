@@ -9,35 +9,20 @@
 // Détermine son inverse -> fonction
 // Additionne les deux
 
-export const isReversible = (n: any) => {
-  const reversedNumber = returnReversedNumber(n)
-  const sum = n + reversedNumber
-  return isNumberComposedOfOddNumbers(sum)
-}
+export const isReversible = (n: number): boolean =>
+  n % 10 !== 0 && isComposedOfOnlyOdds(n + reverse(n));
 
-export const returnReversedNumber = (value: any) => {
-  const tempNumber = value + ""
-  return parseInt(tempNumber.split("").reverse().join(""))
-}
+export const reverse = (value: number): number =>
+  Number(value.toString().split("").reverse().join(""));
 
-export const isNumberComposedOfOddNumbers = (result: any) => {
-  const numberArray = result.toString().split("")
-  let boolResult: boolean = true
-  numberArray.forEach((n: any) => {
-    const stringToNumber = parseInt(n)
-    if (stringToNumber % 2 == 0) {
-      boolResult = false
-    }
-  })
-  return boolResult
-}
+export const isComposedOfOnlyOdds = (result: number): boolean =>
+  result
+    .toString()
+    .split("")
+    .map((c) => Number(c))
+    .every((val) => val % 2 == 1);
 
-export const countReversibleNumbers = (maxRange: any) => {
-  let reversibleNumbers = []
-  for (let i = 0; i <= maxRange; i++) {
-    if (isReversible(i) && i % 10 !== 0) {
-      reversibleNumbers.push(i)
-    }
-  }
-  return reversibleNumbers.length
-}
+export const countReversibleNumbers = (maxRange: number): number =>
+  Array.from(Array(maxRange).keys())
+    .map((i) => i++)
+    .filter((val) => isReversible(val)).length;
