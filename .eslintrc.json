@@ -1,7 +1,13 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "extends": ["plugin:jest/all"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -14,22 +20,5 @@
     "import/resolver": {
       "typescript": {}
     }
-  },
-  // As using Airbnb code styles, we need to override specific rules
-  "rules": {
-    // To use single quotes and raise a warning else.
-    "@typescript-eslint/quotes": ["warn", "double"],
-    "jest/no-hooks": [
-      "error",
-      {
-        "allow": ["beforeEach", "afterAll"]
-      }
-    ],
-    "jest/prefer-expect-assertions": [
-      "warn",
-      {
-        "onlyFunctionsWithAsyncKeyword": true
-      }
-    ]
   }
 }

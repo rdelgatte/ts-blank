@@ -3,7 +3,7 @@ import {
   isComposedOfOnlyOdds,
   isReversible,
   countReversibleNumbers,
-} from "../src/sample";
+} from "../src/reversible";
 
 describe("reverse function", () => {
   it("should return 63 when given number is 36", () => {
