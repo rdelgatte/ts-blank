@@ -1,4 +1,4 @@
-import { fizzBuzz } from "../src/fizzBuzz";
+import { fizzBuzz } from "../src/fizzbuzz";
 
 describe("FizzBuzz", () => {
   it('providing n = 5 returns "1 2 Fizz 4 Buzz"', () =>
